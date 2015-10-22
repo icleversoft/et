@@ -1,0 +1,118 @@
+ #
+ #Stage-1
+ #The stage of the exersise
+stage1: 
+  dimensions: [8, 6]
+  wall: [[1,3],[2,3],[3,3],[4,3],[4,2],[5,5],[6,5],[7,5],[7,6]]
+  start: [1,1]
+  goal: [6,6]
+
+ #
+ #Stage-2
+ #A smaller valid stage
+stage2: 
+  dimensions: [5, 3]
+  wall: [[2,2],[3,3],[5,1]]
+  start: [4,3]
+  goal: [2,3]
+ 
+ #
+ #Stage-3
+ #A smaller valid stage
+ #Goal is unreachable
+stage3: 
+  dimensions: [5, 3]
+  wall: [[3,1],[3,2],[4,3]]
+  start: [4,2]
+  goal: [2,3]
+ #
+ #Stage-4
+ #A smaller valid stage
+ #Goal is unreachable
+ #Robot can't move actually
+stage4: 
+  dimensions: [5, 3]
+  wall: [[2,2],[3,3],[4,2],[3,1]]
+  start: [3,2]
+  goal: [1,1]
+
+ 
+ #
+ #Stages that follows are invalid and should
+ #throw an error while their initialization
+ #
+ #start_is_not_given_
+ #
+ #Start Point is not given 
+start_is_not_given: 
+  dimensions: [4, 3]
+  wall: [[2,2],[3,2],[4,1]]
+  goal: [4,3]
+
+ #
+ #goal_is_not_given_
+ #
+ #Goal Point is not given 
+goal_is_not_given: 
+  dimensions: [4, 3]
+  wall: [[2,2],[3,2],[4,1]]
+  start: [1,1]
+ #
+ #start_into_wall
+ #
+ #Start Point is a wall point
+start_into_wall: 
+  dimensions: [4, 3]
+  wall: [[2,2],[3,2],[4,1]]
+  start: [4,1]
+  goal: [4,3]
+
+ #
+ #end_into_wall
+ #
+ #End Point is a wall point
+end_into_wall: 
+  dimensions: [4, 3]
+  wall: [[1,3],[3,2],[4,1]]
+  start: [1,2]
+  goal: [1,3]
+
+ #
+ #wall_outside
+ #
+ # Wall Point is outside of stage
+wall_outside: 
+  dimensions: [4, 3]
+  wall: [[1,3],[3,4],[4,1]]
+  start: [1,2]
+  goal: [1,4]
+
+ #
+ #end_outside
+ #
+ # End Point is outside of stage
+end_outside: 
+  dimensions: [4, 3]
+  wall: [[1,3],[3,4],[4,1]]
+  start: [1,2]
+  goal: [5,3]
+ 
+ #
+ #start_outside
+ #
+ # Start Point is outside of stage
+start_outside: 
+  dimensions: [4, 3]
+  wall: [[1,3],[3,4],[4,1]]
+  start: [5,2]
+  goal: [2,3]
+ 
+ #
+ #start_end_collision
+ #
+ # Start and End Points are at the same location 
+start_end_collision: 
+  dimensions: [4, 3]
+  wall: [[1,3],[3,4],[4,1]]
+  start: [3,2]
+  goal: [3,2]

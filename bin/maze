@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '../lib'))
+require 'game'
+
+if ARGV.empty?
+  print "\nUsage: maze [input_file]\n\n"
+else
+  Game.from_file( ARGV[0] ).run
+end
